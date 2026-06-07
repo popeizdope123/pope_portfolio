@@ -147,7 +147,7 @@ function HeroSection() {
           VIEW PROJECTS
         </a>
         <a   
-          href="/resume_alino.pdf"
+          href="/cv_alino.pdf"
           download
           className="px-6 py-3 border border-white/40 text-white text-[11px] font-black tracking-widest hover:border-white transition-colors"
           style={{ textDecoration: "none" }}
