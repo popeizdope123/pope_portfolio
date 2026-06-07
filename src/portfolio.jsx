@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Zap, ShieldCheck, Users, Brain, Mail, FileText } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "01 ABOUT", href: "#about" },
@@ -173,13 +175,13 @@ function AboutSection() {
           {/* Right grid */}
           <div className="md:w-1/2 grid grid-cols-2 gap-3">
             {[
-              { icon: "⚡", title: "ADAPTABILITY", desc: "Seamless context switching between academic research and production deadlines." },
-              { icon: "🛡", title: "DISCIPLINE", desc: "Rigorous time management and commitment to high-quality code standards." },
-              { icon: "👥", title: "COLLABORATION", desc: "Effective communication across technical and non-technical stakeholders." },
-              { icon: "🧩", title: "LOGIC", desc: "Analytical approach to complex debugging and algorithmic optimization." },
+              { icon: <Zap size={22} color="#00ff41" />,        title: "ADAPTABILITY", desc: "Seamless context switching between academic research and production deadlines." },
+              { icon: <ShieldCheck size={22} color="#00ff41" />, title: "DISCIPLINE",   desc: "Rigorous time management and commitment to high-quality code standards." },
+              { icon: <Users size={22} color="#00ff41" />,       title: "COLLABORATION",desc: "Effective communication across technical and non-technical stakeholders." },
+              { icon: <Brain size={22} color="#00ff41" />,       title: "LOGIC",        desc: "Analytical approach to complex debugging and algorithmic optimization." },
             ].map((card) => (
               <div key={card.title} className="bg-[#161616] border border-white/[0.06] p-4 hover:border-[#00ff41]/30 transition-colors">
-                <div className="text-[#00ff41] text-lg mb-2">{card.icon}</div>
+                <div className="mb-2">{card.icon}</div>
                 <div className="text-[10px] font-black tracking-widest text-white mb-2">{card.title}</div>
                 <div className="text-[11px] text-white/40 leading-relaxed">{card.desc}</div>
               </div>
@@ -435,17 +437,24 @@ function ContactSection() {
         {/* Right links */}
         <div className="space-y-0 w-full md:w-auto md:min-w-[300px]">
           {[
-            { label: "GITHUB", icon: "⬡" },
-            { label: "LINKEDIN", icon: "in" },
-            { label: "EMAIL", icon: "✉" },
-            { label: "RESUME", icon: "PDF" },
+            { label: "GITHUB",   icon: <FaGithub size={18} />,   href: "https://github.com/popeizdope123" },
+            { label: "LINKEDIN", icon: <FaLinkedin size={18} />,  href: "https://www.linkedin.com/in/john-paul-ali%C3%B1o-a2492a411" },
+            { label: "EMAIL",    icon: <Mail size={18} />,         href: "mailto:johnpaul.alino@yahoo.com" },
+            { label: "RESUME",   icon: <FileText size={18} />,     href: "/resume_alino.pdf" },
           ].map((link) => (
-            <div key={link.label} className="flex items-center justify-between py-4 border-b border-black/20 group cursor-pointer">
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between py-4 border-b border-black/20 group cursor-pointer"
+              style={{ textDecoration: "none" }}
+            >
               <span className="font-black text-black text-xl tracking-tight group-hover:translate-x-1 transition-transform">
                 {link.label}
               </span>
-              <span className="text-black/60 font-bold text-xs border border-black/30 px-2 py-1 rounded-sm">{link.icon}</span>
-            </div>
+              <span className="text-black/60 border border-black/30 p-2">{link.icon}</span>
+            </a>
           ))}
         </div>
       </div>
