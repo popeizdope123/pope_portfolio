@@ -19,8 +19,8 @@ const SKILLS = [
 ];
 
 const ACHIEVEMENTS = [
-  { num: "01", title: "ADVANCED MACHINE LEARNING SEMINAR", sub: "University Research Symposium • 2023" },
-  { num: "02", title: "AI RESEARCH PRESENTATION", sub: "National IT Education Conference • 2023" },
+  { num: "01", title: "Best Research Paper", sub: "CET Research Conference • 2026" },
+  { num: "02", title: "Full Stack Development 101", sub: "Simplilearn • 2026" },
   { num: "03", title: "BUILD COMPLETE CMS BLOG IN PHP MYSQL BOOTSRAP & PDO", sub: "UDEMY • 2024" },
 ];
 
@@ -139,12 +139,21 @@ function HeroSection() {
 
       {/* Buttons */}
       <div className="relative z-10 flex gap-4 px-6 py-8">
-        <button className="px-6 py-3 bg-[#00ff41] text-black text-[11px] font-black tracking-widest hover:bg-white transition-colors">
+        <a
+          href="#projects"
+          className="px-6 py-3 bg-[#00ff41] text-black text-[11px] font-black tracking-widest hover:bg-white transition-colors"
+          style={{ textDecoration: "none" }}
+        >
           VIEW PROJECTS
-        </button>
-        <button className="px-6 py-3 border border-white/40 text-white text-[11px] font-black tracking-widest hover:border-white transition-colors">
+        </a>
+        <a   
+          href="/resume_alino.pdf"
+          download
+          className="px-6 py-3 border border-white/40 text-white text-[11px] font-black tracking-widest hover:border-white transition-colors"
+          style={{ textDecoration: "none" }}
+        >
           DOWNLOAD CV
-        </button>
+        </a>
       </div>
     </section>
   );
